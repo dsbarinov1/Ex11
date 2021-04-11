@@ -1,8 +1,7 @@
 // Copyright 2020 DBarinov
-
 #include <iostream>
 #include <string>
-#include <train.h>
+#include "train.h"
 
 int main() {
     unsigned int gen = std::time(NULL);  // Generation

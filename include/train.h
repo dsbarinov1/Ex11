@@ -6,10 +6,10 @@
 
 
 class Cage {
-private:
+ private:
     bool light;  // the state of the light in the cage (on/off)
 
-public:
+ public:
     Cage* next;  // pointer to the next cage
     Cage* prev;  // pointer to the prev cage
     Cage() : light(false), next(nullptr), prev(nullptr) {}  // cage builder
@@ -26,17 +26,13 @@ class Train {
  public:
     Train();  // builder 
     explicit Train(size_t n);  // create an array of size n
-
     void add_cage(bool light = false);  // add a cage
     void print_cages_status();  // Print the status of all cages in the train
     size_t train_length();  // method of finding the train length
-
     void print_length();  // print the length of the train
-
     Cage* getFirst() {
         return first;
     }
-
     Cage* getLast() {
         return last;
     }
