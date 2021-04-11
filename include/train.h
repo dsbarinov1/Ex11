@@ -4,33 +4,34 @@
 
 #include <ctime>
 
+
 class Cage {
 private:
-    bool light; // состояние света в вагоне (вкл/выкл)
+    bool light;  // the state of the light in the cage (on/off)
 
 public:
-    Cage* next; // указатель на следующий вагон
-    Cage* prev; // указатель на предыдущий вагон
-    Cage() : light(false), next(nullptr), prev(nullptr) {} // конструктор вагона
-    void on() { light = true; } // ВКЛ свет
-    void off() { light = false; } // ВЫКЛ свет
+    Cage* next;  // pointer to the next cage
+    Cage* prev;  // pointer to the prev cage
+    Cage() : light(false), next(nullptr), prev(nullptr) {}  // cage builder
+    void on() { light = true; }  //  ON light
+    void off() { light = false; }  //  OFF light
     bool get() const { return light; }
 };
 
 class Train {
  private:
-    Cage* first; // указатель на первый вагон 
-    Cage* last; // указатель на последний вагон
+    Cage* first;  // pointer to the first cage
+    Cage* last;  // pointer to the last cage
 
  public:
-    Train(); // конструктор 
-    explicit Train(size_t n); // создаём массив размера n
+    Train();  // builder 
+    explicit Train(size_t n);  // create an array of size n
 
-    void add_cage(bool light = false); // добавление вагона 
-    void print_cages_status(); // печать состояния всех вагонов в поезде
-    size_t train_length(); // метод нахождения длины поезда
+    void add_cage(bool light = false);  // add a cage
+    void print_cages_status();  // Print the status of all cages in the train
+    size_t train_length();  // method of finding the train length
 
-    void print_length(); // распечатать длину поезда
+    void print_length();  // print the length of the train
 
     Cage* getFirst() {
         return first;
@@ -40,7 +41,5 @@ class Train {
         return last;
     }
 };
-
-
 
 #endif  // INCLUDE_TRAIN_H_

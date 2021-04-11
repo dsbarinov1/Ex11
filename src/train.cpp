@@ -5,12 +5,12 @@
 #include "train.h"
 
 
-Train::Train() { // Конструктор по-умолчанию
+Train::Train() {  // Builder by default
     this->first = nullptr;
     this->last = nullptr;
 }
 
-Train::Train(size_t n) { // Конструктор + генерация
+Train::Train(size_t n) {  // Builder + generation
     this->first = nullptr;
     this->last = nullptr;
 
@@ -18,7 +18,6 @@ Train::Train(size_t n) { // Конструктор + генерация
 
     for (size_t i = 0; i < n; i++) {
         Cage* this_cage = new Cage;
-
         int status = rand_r(&gen) % 2; 
         if (status == 1) {
             this->add_cage(true);
@@ -28,7 +27,7 @@ Train::Train(size_t n) { // Конструктор + генерация
     }
 }
 
-void Train::add_cage(bool light) { // метод добавления вагона
+void Train::add_cage(bool light) {  // method of adding a cage
     Cage* this_cage = new Cage;
 
     if (light == true) {
@@ -56,7 +55,7 @@ void Train::add_cage(bool light) { // метод добавления вагона
     }
 }
 
-void Train::print_cages_status() {
+void Train::print_cages_status() {  // printing the status of all cages
     Cage* temp = this->first;
 
     size_t count = 1;
@@ -67,10 +66,11 @@ void Train::print_cages_status() {
         count++;
         temp = temp->next;
     }
-    std::cout << "Status of cage number " << count << " is: " << temp->get() << std::endl;
+    std::cout << "Status of cage number " << count << " is: " << temp->get();
+    std::cout << std::endl;
 }
 
-size_t Train::train_length() {
+size_t Train::train_length() {  // train length
     size_t lgth = 0;
     Cage* temp_cage = this->first;
 

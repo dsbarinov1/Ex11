@@ -4,17 +4,15 @@
 #include <string>
 #include <train.h>
 
-using namespace std;
-
 int main() {
-    unsigned int gen = time(NULL); // Генерация
-    size_t num_train = rand_r(&gen) % 100; // Генерация
+    unsigned int gen = std::time(NULL);  // Generation
+    size_t num_train = rand_r(&gen) % 100;  // Generation
 
-    Train MyTrain(num_train); // Создаём объект класса Train
+    Train MyTrain(num_train);  // Creating an object of class Train
 
-    MyTrain.print_cages_status(); // Выводим всю полученную информацию
+    MyTrain.print_cages_status();  // Print all the obtained information
     MyTrain.print_length();
-    cout << endl;
-    cout << "Length = " << num_train << endl;
+    std::cout << std::endl;
+    std::cout << "Length = " << num_train << std::endl;
     return 0;
 }
