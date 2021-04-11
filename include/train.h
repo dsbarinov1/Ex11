@@ -24,7 +24,7 @@ class Train {
     Cage* last;  // pointer to the last cage
 
  public:
-    Train();  // builder 
+    Train();  // builder
     explicit Train(size_t n);  // create an array of size n
     void add_cage(bool light = false);  // add a cage
     void print_cages_status();  // Print the status of all cages in the train

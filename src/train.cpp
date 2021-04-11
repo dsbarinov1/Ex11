@@ -15,7 +15,7 @@ Train::Train(size_t n) {  // Builder + generation
     unsigned int gen = std::time(NULL);
     for (size_t i = 0; i < n; i++) {
         Cage* this_cage = new Cage;
-        int status = rand_r(&gen) % 2; 
+        int status = rand_r(&gen) % 2;
         if (status == 1) {
             this->add_cage(true);
         } else {
